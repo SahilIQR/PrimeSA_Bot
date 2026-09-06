@@ -1,0 +1,128 @@
+{
+  "27673642166@s.whatsapp.net": {
+    "name": "Mother",
+    "autoReply": false,
+    "nicknames": [ "Mawamii" ],
+    "instructions": "Always call her Mawamii. Be respectful, caring and polite."
+  },
+
+  "27723395806@s.whatsapp.net": {
+    "name": "Mamkhulu",
+    "autoReply": false,
+    "nicknames": [ "Mamkhulu wmii" ],
+    "instructions": "Always call him Mamkhulu wmii. Speak respectfully."
+  },
+
+  "27820862101@s.whatsapp.net": {
+    "name": "Other Mom",
+    "autoReply": false,
+    "nicknames": ["Mawamii"],
+    "instructions": "Always call her Mawamii. Be respectful and caring."
+  },
+
+  "27726560428@s.whatsapp.net": {
+    "name": "Uncle",
+    "autoReply": true,
+    "nicknames": [ "Uncle lmii" ],
+    "instructions": "Always call him Uncle lmii. Be respectful."
+  },
+
+  "27765160521@s.whatsapp.net": {
+    "name": "Siyamthanda",
+    "autoReply": true,
+    "nicknames": [
+      "Bhutii wmii",
+      "Bafz wmii",
+      "Mfowami",
+      "Mfanakithi"
+    ],
+    "instructions": "Talk like a close brother. Randomly use one nickname."
+  },
+
+  "27672770973@s.whatsapp.net": {
+    "name": "Luh",
+    "autoReply": true,
+    "nicknames": [ "Soshaa lmii" ],
+    "instructions": "Always call him Soshaa lmii."
+  },
+
+  "27835493394@s.whatsapp.net": {
+    "name": "S. Madonsela",
+    "autoReply": true,
+    "nicknames": ["Sir Madonsela"],
+    "instructions": "Always call him Sir Madonsela. Be formal and respectful."
+  },
+
+  "27603520001@s.whatsapp.net": {
+    "name": "Ngubane",
+    "autoReply": true,
+    "nicknames": [ "Sir Ngubane" ],
+    "instructions": "Always call him Sir Ngubane. Be formal and respectful."
+  },
+
+  "27790596836@s.whatsapp.net": {
+    "name": "Spharh",
+    "autoReply": true,
+    "nicknames": [
+      "Spharh man",
+      "Sosha lmii",
+      "Nkabi ymii",
+      "Bhut omncane",
+      "Wakithii"
+    ],
+    "instructions": "Talk like a close friend. Randomly use one nickname."
+  },
+
+  "27751532697@s.whatsapp.net": {
+    "name": "Sphe",
+    "autoReply": true,
+    "nicknames": [
+      "Ngwenya",
+      "Mtimande",
+      "Wakithii"
+    ],
+    "instructions": "Talk like a close friend. Randomly use one nickname."
+  },
+
+  "27609169182@s.whatsapp.net": {
+    "name": "Lubanzi",
+    "autoReply": true,
+    "nicknames": [
+      "Bhutii",
+      "Baf"
+    ],
+    "instructions": "Talk casually like a brother."
+  },
+
+  "27767080430@s.whatsapp.net": {
+    "name": "Maaz",
+    "autoReply": false,
+    "nicknames": [ "My brother" ],
+    "instructions": "Always call him My brother."
+  },
+
+  "27655366329@s.whatsapp.net": {
+    "name": "Kelvin",
+    "autoReply": true,
+    "nicknames": [ "Sosha lmi" ],    
+    "instructions": "Always call him Sosha lmi."
+  },
+
+  "27712409996@s.whatsapp.net": {
+    "name": "Ndurh",
+    "autoReply": true,
+    "nicknames": [
+      "Bhuti",
+      "Baf",
+      "Mfowakithi"
+    ],
+    "instructions": "Talk like a close friend. Randomly use one nickname."
+  },
+
+  "27823556855@s.whatsapp.net": {
+    "name": "Deputy",
+    "autoReply": false,
+    "nicknames": [ "Miss" ],
+    "instructions": "Autoreply is disabled for this contact."
+  }
+}
