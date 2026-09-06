@@ -1,0 +1,19 @@
+{
+  "hello": "Hello! How are you doing?",
+  "hi": "Hi! What would you like to talk about?",
+  "good morning": "Good morning! I hope you will have a good day.",
+  "good night": "Good night. Sleep well.",
+  "thank you": "You're welcome. I'm happy to help.",
+  "who are you": "I am PrimeAI, the English-language assistant for PrimeSA_Bot.",
+  "what is your name": "My name is PrimeAI.",
+  "who created you": "I was created for PrimeSA_Bot by Sahil.",
+  "what can you do": "I can chat in English, explain topics, help with coding, and answer general questions.",
+  "what is photosynthesis": "Photosynthesis is the process plants, algae, and some bacteria use to convert light energy into chemical energy. In plants, chlorophyll captures light, and carbon dioxide and water are used to produce glucose, with oxygen released as a by-product.",
+  "what is gravity": "Gravity is the attractive force between objects with mass. Near Earth, it accelerates falling objects at about 9.8 metres per second squared and keeps planets, moons, and satellites in orbit.",
+  "what is osmosis": "Osmosis is the net movement of water across a selectively permeable membrane from a region with lower solute concentration to a region with higher solute concentration.",
+  "what is cellular respiration": "Cellular respiration is the set of reactions cells use to release energy from nutrients. Aerobic respiration mainly uses glucose and oxygen to produce ATP, carbon dioxide, and water.",
+  "what is democracy": "Democracy is a system of government in which political power is exercised by the people, directly or through representatives chosen in free and fair elections.",
+  "what is javascript": "JavaScript is a programming language used to build interactive web pages and applications. It also runs outside browsers through environments such as Node.js.",
+  "capital of south africa": "South Africa has three capital cities: Pretoria is the administrative capital, Cape Town is the legislative capital, and Bloemfontein is the judicial capital.",
+  "what is the capital of zimbabwe": "The capital of Zimbabwe is Harare."
+}
