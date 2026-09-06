@@ -1,0 +1,7 @@
+.env
+session/
+sessions/
+creds.json
+auth_info_baileys/
+*.key
+*.pem
