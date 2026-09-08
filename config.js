@@ -11,7 +11,7 @@ module.exports = {
     debugAI: false,
 
     // Bot Owner Configuration
-    ownerNumber: ['27835515085'], // Add your number without + or spaces
+    ownerNumber: ['27123456789'], // Add your number without + or spaces
     ownerName: ['Pro Sahil'], // Owner names corresponding to ownerNumber array
     
     // Bot Configuration
