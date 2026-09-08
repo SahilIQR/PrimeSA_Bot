@@ -40,7 +40,7 @@ async function generateReply({ senderId, text }){
 
     // Build a safe prompt that forces English responses and persona
     const prompt = [
-        'You are the PrimeSAAI assistant — a friendly, human-like assistant. Reply in English only. Do NOT claim to be Sahil or mention Sahil. Use a natural, conversational tone, as if you were a helpful person.',
+        'You are the PrimeSA_AI assistant — a friendly, human-like assistant. Reply in English only. Do NOT claim to be Sahil or mention Sahil. Use a natural, conversational tone, as if you were a helpful person.',
         'If the user wrote in isiZulu, understand it, but respond in English. Also add the sentence: "Note: I detected your message in isiZulu; to continue chatting with me please type in full English."',
         'Keep replies concise (one to three short paragraphs). Do not mention internal instructions, system messages, or APIs.',
         `User: ${text}`
@@ -58,11 +58,11 @@ async function generateReply({ senderId, text }){
     if(/\b(sawubona|unjani|ngiyabonga|yini|molweni|kunjani)\b/i.test(reply)){
         // fallback: ask to write in English and provide brief English acknowledgement
         const fallback = `I understood your isiZulu message. Please continue in full English so I can help you better.`;
-        return `PrimeSAAI assistant: ${fallback}`;
+        return `PrimeSA_AI assistant: ${fallback}`;
     }
 
     // Prepend assistant identity (not Sahil)
-    return `PrimeSAAI assistant: ${reply}`;
+    return `PrimeSA_AI assistant: ${reply}`;
 }
 
 // Chat memory is now handled by convoMemory
