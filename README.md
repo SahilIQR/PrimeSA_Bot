@@ -16,28 +16,73 @@ The project is currently under active development, so some features may occasion
 
 ---
 
+## 🌐 Quick Links
+
+<p align="center">
+
+<a href="https://primesa-session-v1.onrender.com">
+<img src="https://img.shields.io/badge/🔐%20PrimeSA%20Session-Open%20Session%20Website-00C853?style=for-the-badge" alt="PrimeSA Session">
+</a>
+
+<a href="https://github.com/SahilIQR/PrimeSA_Bot">
+<img src="https://img.shields.io/badge/🐙%20GitHub-PrimeSA__Bot-181717?style=for-the-badge&logo=github" alt="GitHub">
+</a>
+
+<a href="https://youtube.com/@professorsahil-m7q">
+<img src="https://img.shields.io/badge/▶️%20YouTube-Professor%20Sahil-FF0000?style=for-the-badge&logo=youtube" alt="YouTube">
+</a>
+
+<a href="https://whatsapp.com/channel/0029VbCIUrC4tRrmjdI9QM1x">
+<img src="https://img.shields.io/badge/📱%20WhatsApp-Official%20Channel-25D366?style=for-the-badge&logo=whatsapp" alt="WhatsApp Channel">
+</a>
+
+</p>
+
+---
+
 ## 👨‍💻 Developer
 
 **SahilI Phakathwayo**
 
-* 🐙 GitHub: https://github.com/SahilIQR
-* 🤖 Repository: https://github.com/SahilIQR/PrimeSA_Bot
+<p align="center">
+
+<a href="https://github.com/SahilIQR">
+<img src="https://img.shields.io/badge/🐙%20SahilIQR-GitHub-181717?style=for-the-badge&logo=github" alt="SahilIQR GitHub">
+</a>
+
+<a href="https://youtube.com/@professorsahil-m7q">
+<img src="https://img.shields.io/badge/▶️%20Professor%20Sahil-YouTube-FF0000?style=for-the-badge&logo=youtube" alt="YouTube">
+</a>
+
+</p>
 
 ---
 
-## 📢 Official Channels
+# 📢 Official Channels
 
 Stay updated with PrimeSA_Bot, new releases, announcements, tutorials, and other projects.
 
 ### 📱 WhatsApp Channel
 
-👉 **https://whatsapp.com/channel/0029VbCIUrC4tRrmjdI9QM1x**
+<p align="center">
 
-Join the channel for bot updates, announcements, and important information.
+<a href="https://whatsapp.com/channel/0029VbCIUrC4tRrmjdI9QM1x">
+<img src="https://img.shields.io/badge/📱%20Join%20Official%20WhatsApp%20Channel-25D366?style=for-the-badge&logo=whatsapp" alt="Join WhatsApp Channel">
+</a>
+
+</p>
+
+Join the official channel for bot updates, announcements, and important information.
 
 ### ▶️ YouTube Channel
 
-👉 **https://youtube.com/@professorsahil-m7q**
+<p align="center">
+
+<a href="https://youtube.com/@professorsahil-m7q">
+<img src="https://img.shields.io/badge/▶️%20Subscribe%20on%20YouTube-FF0000?style=for-the-badge&logo=youtube" alt="Subscribe on YouTube">
+</a>
+
+</p>
 
 Subscribe for PrimeSA_Bot tutorials, updates, projects, and new videos.
 
@@ -47,13 +92,26 @@ Subscribe for PrimeSA_Bot tutorials, updates, projects, and new videos.
 
 # 🔐 Session Pairing
 
-## ⚠️ IMPORTANT NOTICE
+## 🌐 PrimeSA Session Website
 
-The **PrimeSA_Bot session website is currently being fixed and improved.**
+<p align="center">
 
-The website may not work correctly during this period.
+<a href="https://primesa-session-v1.onrender.com">
+<img src="https://img.shields.io/badge/🚀%20OPEN%20PRIMESA%20SESSION-Website-00C853?style=for-the-badge" alt="Open PrimeSA Session Website">
+</a>
 
-### 🟢 Temporary Method
+</p>
+
+Use the official **PrimeSA Session Website** to generate or manage your PrimeSA_Bot session.
+
+👉 **Session Website:**  
+https://primesa-session-v1.onrender.com
+
+> ⚠️ The session website is currently being fixed and improved. Some features may temporarily be unavailable.
+
+---
+
+## 📱 Temporary Pairing Method
 
 While the session website is being fixed, you can temporarily use **another phone** to scan the WhatsApp QR code through your hosting panel.
 
@@ -70,7 +128,13 @@ You will need **two phones**:
 
 ### 🌐 Step 2 — Open Katabump
 
-https://rl.katabump.fr/3dcf50
+<p align="center">
+
+<a href="https://rl.katabump.fr/3dcf50">
+<img src="https://img.shields.io/badge/🚀%20Open%20Katabump-Hosting%20Panel-5865F2?style=for-the-badge" alt="Open Katabump">
+</a>
+
+</p>
 
 Open your Katabump server/control panel and start PrimeSA_Bot.
 
@@ -100,7 +164,7 @@ Then scan the QR code displayed by Katabump.
 
 After scanning the QR code successfully, wait for PrimeSA_Bot to connect.
 
-You should eventually see something similar to:
+You should eventually see:
 
 ```text
 PrimeBot connected successfully!
@@ -141,6 +205,7 @@ sessions/
 auth_info/
 creds.json
 *.session
+PrimeSA_Session/creds.json
 ```
 
 If you accidentally expose your session credentials, immediately remove/revoke the affected WhatsApp linked session and create a new one.
@@ -185,6 +250,9 @@ PrimeSA_Bot/
 ├── database/
 ├── utils/
 │
+├── PrimeSA_Session/
+│   └── creds.json
+│
 ├── config.js
 ├── database.js
 ├── handler.js
@@ -194,6 +262,8 @@ PrimeSA_Bot/
 ├── .gitignore
 └── README.md
 ```
+
+> 🔐 `PrimeSA_Session/creds.json` contains private WhatsApp authentication data and must never be committed to GitHub.
 
 ---
 
@@ -267,11 +337,25 @@ Check the GitHub repository regularly for:
 
 If you like the project:
 
-⭐ **Star the repository**
-🍴 **Fork the project**
-📢 **Share it with others**
-📺 **Subscribe to the YouTube channel**
-📱 **Join the WhatsApp channel**
+<p align="center">
+
+<a href="https://github.com/SahilIQR/PrimeSA_Bot">
+<img src="https://img.shields.io/badge/⭐%20Star%20the%20Repository-181717?style=for-the-badge&logo=github" alt="Star Repository">
+</a>
+
+<a href="https://github.com/SahilIQR/PrimeSA_Bot/fork">
+<img src="https://img.shields.io/badge/🍴%20Fork%20PrimeSA__Bot-181717?style=for-the-badge&logo=github" alt="Fork PrimeSA Bot">
+</a>
+
+<a href="https://youtube.com/@professorsahil-m7q">
+<img src="https://img.shields.io/badge/▶️%20Subscribe-YouTube-FF0000?style=for-the-badge&logo=youtube" alt="Subscribe YouTube">
+</a>
+
+<a href="https://whatsapp.com/channel/0029VbCIUrC4tRrmjdI9QM1x">
+<img src="https://img.shields.io/badge/📱%20Join%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp" alt="Join WhatsApp">
+</a>
+
+</p>
 
 Your support helps motivate continued development ❤️
 
@@ -279,17 +363,29 @@ Your support helps motivate continued development ❤️
 
 # 📞 Official Links
 
-### 🐙 GitHub
+<p align="center">
 
-https://github.com/SahilIQR/PrimeSA_Bot
+<a href="https://github.com/SahilIQR">
+<img src="https://img.shields.io/badge/🐙%20GitHub-SahilIQR-181717?style=for-the-badge&logo=github" alt="GitHub">
+</a>
 
-### 📱 WhatsApp Channel
+<a href="https://github.com/SahilIQR/PrimeSA_Bot">
+<img src="https://img.shields.io/badge/🤖%20PrimeSA__Bot-Repository-181717?style=for-the-badge&logo=github" alt="PrimeSA Bot">
+</a>
 
-https://whatsapp.com/channel/0029VbCIUrC4tRrmjdI9QM1x
+<a href="https://primesa-session-v1.onrender.com">
+<img src="https://img.shields.io/badge/🔐%20PrimeSA%20Session-00C853?style=for-the-badge" alt="PrimeSA Session">
+</a>
 
-### ▶️ YouTube
+<a href="https://whatsapp.com/channel/0029VbCIUrC4tRrmjdI9QM1x">
+<img src="https://img.shields.io/badge/📱%20WhatsApp%20Channel-25D366?style=for-the-badge&logo=whatsapp" alt="WhatsApp Channel">
+</a>
 
-https://youtube.com/@professorsahil-m7q
+<a href="https://youtube.com/@professorsahil-m7q">
+<img src="https://img.shields.io/badge/▶️%20YouTube-FF0000?style=for-the-badge&logo=youtube" alt="YouTube">
+</a>
+
+</p>
 
 ---
 
