@@ -393,6 +393,6 @@ Your support helps motivate continued development ❤️
 
 Developed and maintained by:
 
-## **SahilIQR 🇿🇦**
+## **SahilPhakathwayo 🇿🇦**
 
 > **PrimeSA_Bot — Your Bot, Your Rules.** 🤖🔥
