@@ -1,6 +1,7 @@
 .env
 session/
 sessions/
+PrimeSA_Session/
 creds.json
 auth_info_baileys/
 *.key
