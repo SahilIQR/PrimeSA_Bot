@@ -229,10 +229,51 @@ async function startBot() {
     let sessionFolder = `./${config.sessionName}`;
     const sessionFile = path.join(sessionFolder, 'creds.json');
 
+    // NEW: PrimeSA_Session support (dedicated session directory)
+    const primeSessionDir = path.join(process.cwd(), 'PrimeSA_Session');
+    const primeCredsPath = path.join(primeSessionDir, 'creds.json');
+    const primeAuthDir = path.join(primeSessionDir, 'auth_info_baileys');
+    let loadedPrimeSession = false;
+
+    try {
+        // Ensure the PrimeSA_Session directory exists (requirement 8)
+        fs.mkdirSync(primeSessionDir, { recursive: true });
+    } catch (e) {}
+
+    // If user uploaded a creds.json into PrimeSA_Session/, prepare it for Baileys
+    try {
+        if (fs.existsSync(primeCredsPath)) {
+            // Ensure auth_info_baileys exists within PrimeSA_Session
+            try { fs.mkdirSync(primeAuthDir, { recursive: true }); } catch (e) {}
+
+            const targetCreds = path.join(primeAuthDir, 'creds.json');
+            // Do not overwrite an existing auth creds.json inside auth_info_baileys
+            if (!fs.existsSync(targetCreds)) {
+                // Copy the uploaded creds.json into the auth_info_baileys folder
+                try { fs.copyFileSync(primeCredsPath, targetCreds); } catch (e) {}
+            }
+
+            // Use PrimeSA_Session as the session folder for useMultiFileAuthState
+            sessionFolder = primeSessionDir;
+            loadedPrimeSession = true;
+            // Requirement 21: log only this on success
+            console.log('✅ PrimeSA session loaded successfully');
+        } else {
+            // Requirement 22: clear message when missing
+            console.log('❌ PrimeSA session credentials not found');
+            console.log('Expected: PrimeSA_Session/creds.json');
+        }
+    } catch (e) {
+        // Do not reveal sensitive data; fail gracefully and continue with existing flow
+        loadedPrimeSession = false;
+    }
+
     // ----- SUPPORT FOR EXTERNAL SESSION SYSTEM -----
-    // If config.sessionID looks like the new external generator (session_<...>)
-    // try to download the authenticated multi-file auth state from the session API
-    if (config.sessionID && String(config.sessionID).startsWith('session_')) {
+    // If local PrimeSA session was NOT loaded, and a sessionID or session API is
+    // configured, attempt to download the authenticated multi-file auth state
+    // from the session API (useful for Render deployments). Do not run this if
+    // we already loaded PrimeSA_Session locally.
+    if (!loadedPrimeSession && config.sessionID) {
         try {
             const { downloadSessionBundle } = require('./utils/sessionClient');
             const sessionsBase = config.sessionsDir || './sessions';
