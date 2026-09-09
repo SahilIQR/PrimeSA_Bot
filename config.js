@@ -118,7 +118,7 @@ module.exports = {
 
     // Social Links (optional)
     social: {
-        github: 'https://github.com/sahillume',
+        github: 'https://github.com/SahilIQR/PrimeSA_Bot',
         youtube: 'https://youtube.com/@professorsahil-m7q?si=DXed6qhMosB_JQyL',
         whatsapp: 'https://whatsapp.com/channel/0029VbCIUrC4tRrmjdI9QM1x',
         website: 'https://primesa-bot-26.onrender.com'
