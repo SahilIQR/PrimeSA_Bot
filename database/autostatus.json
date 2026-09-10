@@ -1,5 +1,5 @@
 {
-  "view": true,
-  "react": true,
+  "view": false,
+  "react": false,
   "reaction": "❤️"
 }
