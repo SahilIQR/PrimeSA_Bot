@@ -155,17 +155,41 @@ module.exports = {
                         timeout: config.requestTimeout || 60000
                     });
                     const data = res.data;
-                    collectVideoCandidates(data?.result, candidates);
-                    collectVideoCandidates(data, candidates);
+
+                    // robust extraction: data may be object or string
+                    if (!data) {
+                        // nothing
+                    } else if (typeof data === 'string') {
+                        // sometimes the API returns raw HTML or text containing a URL
+                        collectVideoCandidates(data, candidates);
+                    } else if (typeof data === 'object') {
+                        // common shapes
+                        collectVideoCandidates(data?.result || data?.data || data?.links || data?.streams || data, candidates);
+                        // also common single-url properties
+                        if (data.url) collectVideoCandidates(data.url, candidates);
+                        if (data.playable_url) collectVideoCandidates(data.playable_url, candidates);
+                        if (data.hd_src) collectVideoCandidates(data.hd_src, candidates);
+                    }
+
                     if (candidates.length) break;
                 } catch (e) {
-                    console.log('Facebook API attempt failed:', apiEndpoint, e.message);
+                    // Log endpoint, status and message for debugging
+                    try {
+                        console.log('Facebook API attempt failed:', apiEndpoint, e.response?.status, e.response?.data || e.message);
+                    } catch (err) {
+                        console.log('Facebook API attempt failed:', apiEndpoint, e.message);
+                    }
                 }
             }
 
-            // If still no candidates, try scraping the page directly
+            // If still no candidates, try scraping the page directly (desktop then mobile)
             if (candidates.length === 0) {
-                const scraped = await tryScrapeFacebookPage(url);
+                let scraped = await tryScrapeFacebookPage(url);
+                if ((!scraped || scraped.length === 0) && /facebook\.com/i.test(url)) {
+                    // try mobile variant
+                    const mobileUrl = url.replace(/www\.facebook\.com/i, 'm.facebook.com').replace(/facebook\.com\/watch/i, 'm.facebook.com/watch');
+                    if (mobileUrl !== url) scraped = await tryScrapeFacebookPage(mobileUrl);
+                }
                 if (scraped && scraped.length) candidates.push(...scraped);
             }
 
@@ -175,10 +199,23 @@ module.exports = {
                 throw new Error('Download link not found.');
             }
 
-            // Check size before sending
+            // Check size before sending. Prefer HEAD, fallback to ranged GET to obtain length.
             try {
-                const head = await require('axios').head(best, { timeout: 8000, maxRedirects: 5 });
-                const cl = head.headers['content-length'];
+                let cl = null;
+                try {
+                    const head = await require('axios').head(best, { timeout: 8000, maxRedirects: 5 });
+                    cl = head.headers['content-length'];
+                } catch (hErr) {
+                    // try ranged GET to get content-length via Content-Range or headers
+                    try {
+                        const r = await require('axios').get(best, { timeout: 8000, maxRedirects: 5, headers: { Range: 'bytes=0-1' } });
+                        cl = r.headers['content-length'] || r.headers['content-range']?.split('/')?.[1] || null;
+                    } catch (gErr) {
+                        // ignore, we'll attempt to send
+                        cl = null;
+                    }
+                }
+
                 const maxBytes = (config.videoMaxMB || 50) * 1024 * 1024;
                 if (cl && parseInt(cl, 10) > maxBytes) {
                     await sock.sendMessage(extra.from, { text: `Video is too large to send (${Math.round(parseInt(cl,10)/1024/1024)}MB). Download it here: ${best}` }, { quoted: msg });
@@ -190,7 +227,7 @@ module.exports = {
                     }, { quoted: msg });
                 }
             } catch (e) {
-                // If HEAD fails, try sending by URL and fallback to link
+                // If sending by URL fails, fallback to link
                 try {
                     await sock.sendMessage(extra.from, {
                         video: { url: best },
